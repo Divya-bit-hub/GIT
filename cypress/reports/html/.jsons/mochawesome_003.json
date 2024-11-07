@@ -1,0 +1,105 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2024-10-27T14:33:25.156Z",
+    "end": "2024-10-27T14:33:36.030Z",
+    "duration": 10874,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "9179463d-4b18-4f94-8cd7-a9ffaac0a459",
+      "title": "",
+      "fullFile": "cypress\\integration\\examples\\framework 2.js",
+      "file": "cypress\\integration\\examples\\framework 2.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "da5aa5ad-81d7-4fe7-82e3-928ba6695c7c",
+          "title": "Framework Concepts",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "To handle before hook",
+              "fullTitle": "Framework Concepts To handle before hook",
+              "timedOut": null,
+              "duration": 6571,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-videos-passed\",\n  \"value\": \"cypress\\\\integration\\\\examples\\\\framework 2.js\"\n}",
+              "code": "const home = new _homePage.default();\nconst product = new _productPage.default();\ncy.visit('https://rahulshettyacademy.com/angularpractice/');\nhome.getEditBox().type(this.data.name);\nhome.getGender().select(this.data.gender);\nhome.getPassword().type(this.data.password);\nhome.getEmail().type(this.data.email);\n// cy.pause()  ---this method is used to stop and it can be resumed manually\n//Assertion\nhome.getTwowayDataBinding().should('have.value', this.data.name);\n//the above (:nth-child(1) > .form-control) this code is taken from tester by clicking dots circle which is above \nhome.getEditBox().should('have.attr', 'minlength', '2');\nhome.getEntrepreneur().should('be.disabled');\nhome.getShoptab().click(); //------click shop button\n//the above (:nth-child(2) > .nav-link) this code is taken from tester by clicking dots circle which is above \n// card title is taken for the name of the mobile Blackberry ---- this is related to below row 31\n// cy.get('.card-title').each(($e1,index,$list)=>{      \n//      if($e1.text().includes('Blackberry')){\n//         cy.get('.btn.btn-info').eq(index).click()\n//      }\n//  })\n// cy.selectProduct('Blackberry')   //-----this is from command.js to select the single product\n//On top of above row line 41 we can follow below method to select multiple products\nthis.data.productName.forEach(element => {\n  cy.selectProduct(element); // parameterisation\n});\nproduct.getCheckoutButton().click(); //this is related to productpage",
+              "err": {},
+              "uuid": "f408d9ce-520a-4322-acf3-5f804554b48b",
+              "parentUUID": "da5aa5ad-81d7-4fe7-82e3-928ba6695c7c",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "f408d9ce-520a-4322-acf3-5f804554b48b"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 6571,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress\\reports\\html\\.jsons"
+      },
+      "version": "6.2.0"
+    }
+  }
+}

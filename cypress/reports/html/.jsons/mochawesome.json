@@ -1,0 +1,109 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2024-10-27T14:32:02.772Z",
+    "end": "2024-10-27T14:32:31.108Z",
+    "duration": 28336,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "b9a23d02-f14e-4c04-a8fd-2dd522275c84",
+      "title": "",
+      "fullFile": "cypress\\integration\\examples\\Divi prectice.js",
+      "file": "cypress\\integration\\examples\\Divi prectice.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "81ac0c82-793d-49ee-813c-5466788fe318",
+          "title": "This is for my practice",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Practice session",
+              "fullTitle": "This is for my practice Practice session",
+              "timedOut": null,
+              "duration": 8187,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "[\n  {\n    \"title\": \"cypress-mochawesome-reporter-videos-failed\",\n    \"value\": \"cypress\\\\integration\\\\examples\\\\Divi prectice.js\"\n  },\n  {\n    \"title\": \"cypress-mochawesome-reporter-screenshots\",\n    \"value\": [\n      [\n        \"\\\\Divi prectice.js\\\\This is for my practice -- Practice session (failed).png\"\n      ],\n      [\n        \"\\\\Divi prectice.js\\\\This is for my practice -- Practice session (failed) (attempt 2).png\"\n      ],\n      [\n        \"\\\\Divi prectice.js\\\\This is for my practice -- Practice session (failed) (attempt 3).png\"\n      ]\n    ]\n  }\n]",
+              "code": "cy.visit('https://rahulshettyacademy.com/angularpractice/');\ncy.get('[name=\"name\"]:nth-child(2)').type('James');\ncy.get('[name=\"email\"]').type('james@2024');\ncy.get('#exampleInputPassword1').type('James');\ncy.get('#exampleCheck1').check();\ncy.get('#exampleFormControlSelect1').select('Female');\n//cy.get('#inlineRadio2').check()\ncy.get('#inlineRadio3').check();",
+              "err": {
+                "message": "CypressError: Timed out retrying after 6050ms: `cy.check()` failed because this element is `disabled`:\n\n`<input class=\"form-check-input\" disabled=\"\" id=\"inlineRadio3\" name=\"inlineRadioOptions\" type=\"radio\" value=\"option3\">`\n\nFix this problem, or use `{force: true}` to disable error checking.\n\nhttps://on.cypress.io/element-cannot-be-interacted-with",
+                "estack": "CypressError: Timed out retrying after 6050ms: `cy.check()` failed because this element is `disabled`:\n\n`<input class=\"form-check-input\" disabled=\"\" id=\"inlineRadio3\" name=\"inlineRadioOptions\" type=\"radio\" value=\"option3\">`\n\nFix this problem, or use `{force: true}` to disable error checking.\n\nhttps://on.cypress.io/element-cannot-be-interacted-with\n    at Object.isNotDisabled (https://rahulshettyacademy.com/__cypress/runner/cypress_runner.js:144973:58)\n    at runAllChecks (https://rahulshettyacademy.com/__cypress/runner/cypress_runner.js:113297:26)\n    at retryActionability (https://rahulshettyacademy.com/__cypress/runner/cypress_runner.js:113386:16)\n    at tryCatcher (https://rahulshettyacademy.com/__cypress/runner/cypress_runner.js:1807:23)\n    at Promise.attempt.Promise.try (https://rahulshettyacademy.com/__cypress/runner/cypress_runner.js:4315:29)\n    at whenStable (https://rahulshettyacademy.com/__cypress/runner/cypress_runner.js:143797:68)\n    at <unknown> (https://rahulshettyacademy.com/__cypress/runner/cypress_runner.js:143738:14)\n    at tryCatcher (https://rahulshettyacademy.com/__cypress/runner/cypress_runner.js:1807:23)\n    at Promise._settlePromiseFromHandler (https://rahulshettyacademy.com/__cypress/runner/cypress_runner.js:1519:31)\n    at Promise._settlePromise (https://rahulshettyacademy.com/__cypress/runner/cypress_runner.js:1576:18)\n    at Promise._settlePromise0 (https://rahulshettyacademy.com/__cypress/runner/cypress_runner.js:1621:10)\n    at Promise._settlePromises (https://rahulshettyacademy.com/__cypress/runner/cypress_runner.js:1701:18)\n    at Promise._fulfill (https://rahulshettyacademy.com/__cypress/runner/cypress_runner.js:1645:18)\n    at <unknown> (https://rahulshettyacademy.com/__cypress/runner/cypress_runner.js:5450:46)\nFrom Your Spec Code:\n    at Context.eval (webpack://automationproject/./cypress/integration/examples/Divi prectice.js:13:32)",
+                "diff": null
+              },
+              "uuid": "3b348ebd-f42e-4133-9a0c-df166eb67eeb",
+              "parentUUID": "81ac0c82-793d-49ee-813c-5466788fe318",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "3b348ebd-f42e-4133-9a0c-df166eb67eeb"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 8187,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress\\reports\\html\\.jsons"
+      },
+      "version": "6.2.0"
+    }
+  }
+}

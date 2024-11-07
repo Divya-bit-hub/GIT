@@ -1,0 +1,105 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2024-10-27T14:33:57.826Z",
+    "end": "2024-10-27T14:34:13.488Z",
+    "duration": 15662,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "2cbde270-7f1d-4ba3-92f8-6af1e879bbc4",
+      "title": "",
+      "fullFile": "cypress\\integration\\examples\\framework 3.js",
+      "file": "cypress\\integration\\examples\\framework 3.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "1da871fe-1a73-4c53-8f1b-def299ea1792",
+          "title": "Framework Concepts",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "To handle before hook",
+              "fullTitle": "Framework Concepts To handle before hook",
+              "timedOut": null,
+              "duration": 11598,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-videos-passed\",\n  \"value\": \"cypress\\\\integration\\\\examples\\\\framework 3.js\"\n}",
+              "code": "const home = new _homePage.default();\nconst product = new _productPage.default();\ncy.visit(Cypress.env('url') + '/angularpractice/');\nhome.getEditBox().type(this.data.name);\nhome.getGender().select(this.data.gender);\nhome.getPassword().type(this.data.password);\nhome.getEmail().type(this.data.email);\n// cy.pause()  ---this method is used to stop and it can be resumed manually\n//Assertion\nhome.getTwowayDataBinding().should('have.value', this.data.name);\n//the above (:nth-child(1) > .form-control) this code is taken from tester by clicking dots circle which is above \nhome.getEditBox().should('have.attr', 'minlength', '2');\nhome.getEntrepreneur().should('be.disabled');\n// Cypress.config('defaultcommandtimeout',8000) // this code is used when we wait the below code to wait for sometime. this is used only for single line line. For all the codes to run a little late we will use the cypress config file.\nhome.getShoptab().click(); //------click shop button\n//the above (:nth-child(2) > .nav-link) this code is taken from tester by clicking dots circle which is above \n// card title is taken for the name of the mobile Blackberry ---- this is related to below row 31\n// cy.get('.card-title').each(($e1,index,$list)=>{      \n//      if($e1.text().includes('Blackberry')){\n//         cy.get('.btn.btn-info').eq(index).click()\n//      }\n//  })\n// cy.selectProduct('Blackberry')   //-----this is from command.js to select the single product\n//On top of above row line 41 we can follow below method to select multiple products\nthis.data.productName.forEach(element => {\n  cy.selectProduct(element); // parameterisation\n});\n// to click on checkout button which is nothing but cart which will have the details of products selected\nproduct.getCheckoutButton().click();\n// next step is to total up the amount of the products which is selected in cart\n//Productsum\nvar sum = 0; //declaration of variable i.e., sum is known as variable\ncy.get('tr td:nth-child(4) strong').each(($e1, index, $list) => {\n  //tr-row ; td-data ; child(4)-4th row under same parent tr\n  const eachamount = $e1.text(); //this will take the amount from webpage\n  var res = eachamount.split(\" \"); //this will split the rupee symbol and dot in one set and amount in another set [\"rupee.\", \"65000/50000\"]\n  res = res[1].trim();\n  // sum = sum+eachamount // this method is will be like string so we add below method to convert string to integer\n  sum = Number(sum) + Number(res); //for step1 sum ref will be zero and then 0+65000=65000. for next step sum ref will be 65000 so 65000+50000=115000\n}).then(() => {\n  cy.log(sum);\n});\n//validation of total amount in cart to match with the sum of amount we calculated\n//Expected total\ncy.get('h3 strong').then(element => {\n  const amount = element.text();\n  var total = amount.split(\" \");\n  total = total[1].trim();\n  expect(Number(total)).to.equal(sum);\n});\ncy.contains('Checkout').click();\ncy.get('#country').type('India');\ncy.get('.suggestions').click(); //my method mam's method is cy.get('.suggestions > ul >li >a').click()\ncy.get('#checkbox2').check({\n  force: true\n});\ncy.get('[type=\"submit\"]').click();\ncy.get('.alert').then(text => {\n  const actualText = text.text();\n  expect(actualText.includes('Success')).to.be.true;\n});",
+              "err": {},
+              "uuid": "e08228f3-3336-4eaf-8969-6d076e989f88",
+              "parentUUID": "1da871fe-1a73-4c53-8f1b-def299ea1792",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "e08228f3-3336-4eaf-8969-6d076e989f88"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 11598,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress\\reports\\html\\.jsons"
+      },
+      "version": "6.2.0"
+    }
+  }
+}

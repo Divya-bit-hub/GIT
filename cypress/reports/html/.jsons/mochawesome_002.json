@@ -1,0 +1,105 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2024-10-27T14:33:08.587Z",
+    "end": "2024-10-27T14:33:18.397Z",
+    "duration": 9810,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "525c1da7-29cd-43ef-80de-00897b9d2662",
+      "title": "",
+      "fullFile": "cypress\\integration\\examples\\framework 1.js",
+      "file": "cypress\\integration\\examples\\framework 1.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "d7b613f5-d766-41f3-8291-8c0983c8ea81",
+          "title": "Framework Concepts",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "To handle before hook",
+              "fullTitle": "Framework Concepts To handle before hook",
+              "timedOut": null,
+              "duration": 5752,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-videos-passed\",\n  \"value\": \"cypress\\\\integration\\\\examples\\\\framework 1.js\"\n}",
+              "code": "cy.visit('https://rahulshettyacademy.com/angularpractice/');\ncy.get('[name=\"name\"]:nth-child(2)').type(this.data.name); // [name=\"name\"]:nth-child(2) in this locator we should not give any spaces before or after colon\ncy.get('select').select(this.data.gender);\ncy.get('#exampleInputPassword1').type(this.data.password);\ncy.get('[name=\"email\"]').type(this.data.email); // email didn't print completely\n//Assertion\ncy.get(':nth-child(1) > .form-control').should('have.value', this.data.name);\n//the above (:nth-child(1) > .form-control) this code is taken from tester by clicking dots circle which is above \ncy.get('[name=\"name\"]:nth-child(2)').should('have.attr', 'minlength', '2');\ncy.get('#inlineRadio3').should('be.disabled');\ncy.get(':nth-child(2) > .nav-link').click(); //------click shop button\n//the above (:nth-child(2) > .nav-link) this code is taken from tester by clicking dots circle which is above \n// card title is taken for the name of the mobile Blackberry ---- this is related to below row 31\ncy.get('.card-title').each(($e1, index, $list) => {\n  if ($e1.text().includes('Blackberry')) {\n    cy.get('.btn.btn-info').eq(index).click();\n  }\n});\ncy.selectProduct('Blackberry'); //-----this is from command.js",
+              "err": {},
+              "uuid": "7747505d-8e01-4861-943e-163b697c110b",
+              "parentUUID": "d7b613f5-d766-41f3-8291-8c0983c8ea81",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "7747505d-8e01-4861-943e-163b697c110b"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 5752,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress\\reports\\html\\.jsons"
+      },
+      "version": "6.2.0"
+    }
+  }
+}
